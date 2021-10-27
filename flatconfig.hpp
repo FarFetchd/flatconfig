@@ -24,6 +24,8 @@ public:
     try
     {
       std::ifstream file_in(filename);
+      if (!file_in)
+        return false;
       parseStream(file_in);
     } catch (std::exception const& e) { return false; }
     return true;
