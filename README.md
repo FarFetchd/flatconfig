@@ -23,3 +23,8 @@ std::optional<double> baz = config.getDouble("some_float_or_double");
 
 Comments are supported (start line with #). Inline comments are ok for numeric
 values, but getString() will happily include any #s it sees on that line.
+
+flatconfig is very laid back about malformed lines. If it doesn't like a line -
+missing colon, numeric conversion throws an exception - it just skips it, as if
+the line wasn't there, and goes on parsing the rest. No exceptions thrown (or
+propagated), no other indication anything went wrong.
