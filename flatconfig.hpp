@@ -31,28 +31,28 @@ public:
     return true;
   }
 
-  std::optional<int> getInt(std::string key)
+  std::optional<int> getInt(std::string key) const
   {
     if (auto it = items_.find(key); it != items_.end())
       try { return std::stoi(it->second); } catch (std::exception const& e) {}
     return std::nullopt;
   }
 
-  std::optional<float> getFloat(std::string key)
+  std::optional<float> getFloat(std::string key) const
   {
     if (auto it = items_.find(key); it != items_.end())
       try { return std::stof(it->second); } catch (std::exception const& e) {}
     return std::nullopt;
   }
 
-  std::optional<double> getDouble(std::string key)
+  std::optional<double> getDouble(std::string key) const
   {
     if (auto it = items_.find(key); it != items_.end())
       try { return std::stod(it->second); } catch (std::exception const& e) {}
     return std::nullopt;
   }
 
-  std::optional<std::string> getString(std::string key)
+  std::optional<std::string> getString(std::string key) const
   {
     if (auto it = items_.find(key); it != items_.end())
       return it->second;
