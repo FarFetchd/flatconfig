@@ -5,6 +5,7 @@ A super simple header-only library for reading flat config files that look like:
 ```
 foo: bar bar, bar!
 some_integer: 4
+
 # you choose whether it's a float or double by calling getFloat() or getDouble()
 some_float_or_double: 3.1416
 ```
