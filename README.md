@@ -3,8 +3,8 @@
 A super simple header-only library for reading flat config files that look like:
 
 ```
-foo: bar bar, bar!
-some_integer: 4
+some_foo: 4
+barbarbar: bar bar, bar!
 
 # you choose whether it's a float or double by calling getFloat() or getDouble()
 some_float_or_double: 3.1416
@@ -18,7 +18,7 @@ if (!config.parseFile("test.cfg")) // could also parseStringBlob()
 
 std::optional<int> foo = config.getInt("some_foo");
 std::optional<std::string> bar = config.getString("barbarbar");
-std::optional<double> baz = config.getDouble("the_baz");
+std::optional<double> baz = config.getDouble("some_float_or_double");
 ```
 
 Comments are supported (start line with #). Inline comments are ok for numeric
